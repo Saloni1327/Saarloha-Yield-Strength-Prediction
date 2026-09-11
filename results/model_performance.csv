@@ -1,0 +1,17 @@
+Model,Chromium Dataset,MAE,R2
+Linear Regression,Cr > 5%,30.65,0.52
+Random Forest,Cr > 5%,26.57,0.56
+Decision Tree,Cr > 5%,27.28,0.56
+Bagging Regressor,Cr > 5%,27.03,0.55
+Voting Regressor,Cr > 5%,26.7,0.56
+Gradient Boosting,Cr > 5%,27.53,0.54
+KNN,Cr > 5%,30.74,0.5
+Extra Trees,Cr > 5%,26.67,0.56
+Linear Regression,Cr < 5%,67.67,0.74
+Random Forest,Cr < 5%,51.95,0.83
+Decision Tree,Cr < 5%,55.03,0.82
+Bagging Regressor,Cr < 5%,52.07,0.83
+Voting Regressor,Cr < 5%,54.05,0.82
+Gradient Boosting,Cr < 5%,51.34,0.83
+KNN,Cr < 5%,56.11,0.8
+Extra Trees,Cr < 5%,52.61,0.83
