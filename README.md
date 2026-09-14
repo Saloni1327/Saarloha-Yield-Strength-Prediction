@@ -1,59 +1,137 @@
-# Saarloha Yield Strength Prediction
+# Steel Yield Strength Prediction Using Machine Learning
 
-Machine-learning models for predicting the yield strength of steel from chemical composition and heat-treatment parameters.
+**R&D Intern — Materials & Data Analytics**  
+Saarloha Advanced Materials Pvt. Ltd. (Kalyani Group)
 
-## Project Overview
+### Data-driven prediction of steel yield strength using chemical composition and heat-treatment parameters
 
-This project was completed during my materials R&D internship at Saarloha Advanced Materials.
+## Overview
 
-The work focused on applying machine-learning methods to a steel dataset containing more than 2,700 records. The models were developed to investigate how chemical composition and heat-treatment variables relate to yield strength.
+This project focused on developing data-driven models to predict the yield strength of steels using chemical composition, product size, and heat-treatment parameters.
 
-## Research Objective
+The study used an industrial dataset containing 2,775 steel samples with 25 input variables. The inputs included alloy composition, dimensional information, and hardening and tempering parameters, while yield strength was used as the target property.
 
-The objective was to develop and compare machine-learning models capable of predicting steel yield strength from composition and processing-related features.
+The dataset was segmented based on chromium content (Cr < 5% and Cr > 5%) to investigate different steel composition regimes. Multiple regression and machine-learning models were evaluated to identify suitable approaches for yield-strength prediction.
 
-## Materials and Data
+The project also explored the development of an empirical relationship between composition, processing parameters, and yield strength.
 
-- **Material:** Steel alloys
-- **Target variable:** Yield strength
-- **Input features:** Chemical composition and heat-treatment parameters
-- **Dataset size:** More than 2,700 records
-- **Data source:** Internship research dataset
+> **Data confidentiality:** The industrial dataset used for this project is proprietary and is not included in this repository.
 
-## Machine-Learning Methods
+## Methodology
 
-The project investigated:
+### 1. Dataset
+The study utilized an industrial dataset containing **2,775 steel samples**, with **25 input variables** and yield strength as the target property.
 
+The input features represented:
+
+- Chemical composition of the steels
+- Product size
+- Hardening temperature and soaking conditions
+- Tempering temperature and soaking conditions
+- Cooling process parameters
+
+The dataset was divided into two composition regimes:
+
+- **Cr > 5%**
+- **Cr < 5%**
+
+### 2. Data Preprocessing
+
+The data-preparation workflow included:
+
+- Cleaning missing or incomplete data
+- Data transformation and normalization
+- Outlier detection using the **Interquartile Range (IQR)** method
+- Correlation analysis for feature evaluation
+- An **80/20 training–testing split**
+
+### 3. Predictive Modeling
+
+Multiple regression and machine-learning approaches were investigated for yield-strength prediction, including:
+
+- Linear Regression
+- Decision Tree Regression
 - Random Forest Regression
 - Gradient Boosting Regression
-- Ensemble-based prediction methods
+- Extra Trees Regression
+- Support Vector Regression
+- k-Nearest Neighbors (k-NN)
+- Voting Regression
 
-## Workflow
+Model performance was compared primarily using:
 
-1. Inspect and prepare the dataset.
-2. Identify relevant composition and heat-treatment features.
-3. Split the data into training and testing sets.
-4. Train multiple machine-learning models.
-5. Compare model predictions and performance.
-6. Interpret the relationship between processing variables and yield strength.
+- **Mean Absolute Error (MAE)**
+- **Coefficient of Determination (R²)**
 
-## Skills Demonstrated
+---
 
-- Materials informatics
-- Python-based data analysis
-- Machine-learning model development
+## Key Results
+
+The model comparison showed that the optimal predictive approach differed between the two steel composition regimes:
+
+- **Cr > 5% steels:** Random Forest Regressor provided the strongest predictive performance.
+- **Cr < 5% steels:** Gradient Boosting Regressor provided the strongest predictive performance.
+- **Linear Regression** was additionally used to develop an interpretable empirical relationship connecting composition, size, and heat-treatment parameters with yield strength.
+- Validation of the empirical relationship on a separate test dataset resulted in an **average reported error of approximately 3%**.
+
+These results demonstrate the potential of combining materials-processing knowledge with data-driven modeling for mechanical-property prediction and process optimization.
+
+---
+
+## Materials Insights
+
+Beyond model prediction, the project used correlation analysis to examine relationships between alloy chemistry, processing conditions, and yield strength.
+
+For the **Cr > 5% steel group**, the analysis indicated:
+
+- A positive correlation between **Ni content and yield strength**
+- A positive correlation between **V content and yield strength**
+- Relationships between heat-treatment parameters and mechanical properties
+- A negative correlation between **sulfur content and yield strength**
+
+This analysis helped connect the machine-learning results with metallurgical understanding of composition–processing–property relationships in steels.
+
+---
+
+## Skills & Tools
+
+**Materials Engineering**
+- Steel metallurgy and alloy design
+- Heat-treatment–property relationships
+- Composition–processing–property analysis
+- Mechanical property prediction
+
+**Data Science & Machine Learning**
+- Data preprocessing and outlier detection
+- Exploratory data analysis and correlation analysis
 - Regression modeling
-- Feature preparation and interpretation
-- Materials-property prediction
-- Scientific data visualization
-- Technical reporting
+- Model evaluation using MAE and R²
+- Feature–property relationship analysis
 
-## Repository Structure
+**Tools**
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
 
-- [Data](data/) — Dataset documentation
-- [Analysis](analysis/) — Analysis and modeling documentation
-- [Results](results/) — Results and model-comparison documentation
+---
 
-## Research Status
+## Project Significance
 
-This project was completed as part of an industry R&D internship. Confidential company data and proprietary model files are not included in this repository.
+Accurate prediction of mechanical properties can support faster materials and process-development decisions while reducing reliance on repeated experimental trials.
+
+This project demonstrates how **materials informatics** can combine industrial steel data, metallurgical knowledge, and machine-learning methods to:
+
+- Predict yield strength from composition and processing parameters
+- Compare predictive models across different steel composition regimes
+- Identify relationships between alloying elements, heat treatment, and mechanical properties
+- Support data-driven process optimization in steel manufacturing
+
+---
+
+## Repository Scope
+
+This repository presents a technical overview of work completed during an industrial internship at **Saarloha Advanced Materials Pvt. Ltd.**
+
+To respect data confidentiality, proprietary industrial datasets, company records, and the complete empirical yield-strength equation are not publicly distributed. The repository is intended to demonstrate the project's methodology, materials-informatics approach, and engineering outcomes.
