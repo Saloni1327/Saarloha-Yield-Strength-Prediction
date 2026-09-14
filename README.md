@@ -1,7 +1,7 @@
-# Steel Yield Strength Prediction Using Machine Learning
+# Predicting Steel Yield Strength from Composition & Heat Treatment
 
-**R&D Intern — Materials & Data Analytics**  
-Saarloha Advanced Materials Pvt. Ltd. (Kalyani Group)
+**R&D Intern — Materials Informatics** — [Saarloha Advanced Materials Pvt. Ltd.](https://www.saarloha.com/) (Kalyani Steels), Pune
+**May 2024 – Jul 2024**
 
 ### Data-driven prediction of steel yield strength using chemical composition and heat-treatment parameters
 
@@ -112,6 +112,23 @@ For the **Cr > 5% steel group**, the analysis indicated:
 - A negative correlation between **sulfur content and yield strength**
 
 This analysis helped connect the machine-learning results with metallurgical understanding of composition–processing–property relationships in steels.
+
+---
+
+## Empirical Formula
+
+Because Linear Regression yields directly interpretable coefficients, it was used to derive a closed-form empirical estimate for YS from the significant features identified in the correlation analysis:
+
+```
+YS = 3045.49 + 1026.99·(C%) − 47.57·(Mn%) + 358.40·(Si%) + 484.14·(S%) − 3960.14·(P%)
+     + 74.10·(Cr%) − 23.87·(Ni%) + 955.27·(Mo%) + 49.70·(Al%) + 1695.34·(Ti%)
+     + 11.66·(Cu%) + 50.84·(V%) − 32.40·(H₂ ppm) + 1.46·(N₂ ppm) − 10974.46·(Ca%)
+     − 14987.08·(B%) − 27.11·(Size, in) − 1.53·(Hardening Temp) + 19.26·(Hardening Soak Time)
+     − 0.97·(Hardening Soak Rate) − 14.06·(Hardening Cooling) − 2.58·(Tempering Temp)
+     + 5.59·(Tempering Soak Time) − 0.12·(Tempering Soak Rate) + 5.59·(Tempering Cooling)
+```
+
+Validated against held-out test data, the formula's predictions carried an average error of ~3%.
 
 ---
 
