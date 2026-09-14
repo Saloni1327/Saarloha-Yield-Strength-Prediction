@@ -65,6 +65,28 @@ Model performance was compared primarily using:
 
 ---
 
+## Results & Analysis
+
+### Correlation Analysis
+
+#### Cr > 5% Steels
+![Correlation Heatmap — Cr > 5%](figures/correlation_heatmap_high_cr.png)
+
+#### Cr < 5% Steels
+![Correlation Heatmap — Cr < 5%](figures/correlation_heatmap_low_cr.png)
+
+The correlation analysis was used to examine relationships between alloy chemistry, heat-treatment parameters, and yield strength across the two steel composition regimes.
+
+### Model Performance
+
+#### Mean Absolute Error (MAE)
+![Model MAE Comparison](figures/model_mae_comparison.png)
+
+#### Coefficient of Determination (R²)
+![Model R² Comparison](figures/model_r2_comparison.png)
+
+Model performance was evaluated using **MAE** and **R²**, enabling comparison of the different regression approaches used for yield-strength prediction.
+
 ## Key Results
 
 The model comparison showed that the optimal predictive approach differed between the two steel composition regimes:
